@@ -11,12 +11,13 @@ namespace uf2
 		int count_;
 		int* parent_;
 	public:
-		explicit union_find(const int count):count_(count)
+
+		explicit union_find(const int count): count_(count)
 		{
 			parent_ = new int[count];
-			for(auto i = 0;i<count;i++)
+			for (auto i = 0; i < count; i++)
 			{
-				parent_[i] = i;	// self points to itself
+				parent_[i] = i; // self points to itself
 			}
 		}
 
@@ -34,15 +35,15 @@ namespace uf2
 		}
 
 		bool is_connected(const int p, const int q) const
-		{  
+		{
 			return find(p) == find(q);
 		}
 
-		void union_elements(int p,int q) const
+		void union_elements(int p, int q) const
 		{
 			const auto p_root = find(p);
 			const auto q_root = find(q);
-			if(p_root==q_root)
+			if (p_root == q_root)
 			{
 				return;
 			}

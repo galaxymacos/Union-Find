@@ -10,7 +10,7 @@ namespace uf4
 	{
 		int count_;
 		int* parent_;
-		int* rank_; // sz[i] 表示以i为根的集合中元素的个数
+		int* rank_; 
 	public:
 		explicit union_find(const int count) : count_(count)
 		{
@@ -33,20 +33,12 @@ namespace uf4
 		{
 			assert(p >= 0 && p < count_);
 
-			if(p!=parent_[p])
-			{
-				parent_[p] = find(parent_[p]);
-			}
-			return parent_[p];
-
-			/*
 			while (p != parent_[p])
 			{
 				parent_[p] = parent_[parent_[p]]; 
 				p = parent_[p];
 			}
 			return p;
-			*/
 
 		}
 

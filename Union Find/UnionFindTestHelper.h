@@ -28,7 +28,7 @@ namespace union_find_test_helper
 		}
 
 		const time_t end_time = clock();
-		cout << "Method 3 uses " << double(end_time - start_time) / CLOCKS_PER_SEC <<" s "<< endl;
+		cout << double(end_time - start_time) / CLOCKS_PER_SEC <<" s "<< endl;
 	}
 }
 

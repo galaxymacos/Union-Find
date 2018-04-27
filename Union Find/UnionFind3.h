@@ -10,7 +10,7 @@ namespace uf3
 	{
 		int count_;
 		int* parent_;
-		int* sz_; // sz[i] 表示以i为根的集合中元素的个数
+		int* sz_;
 	public:
 		explicit union_find(const int count) : count_(count)
 		{
@@ -56,8 +56,10 @@ namespace uf3
 				sz_[q_root] += sz_[p_root];
 			}
 			else
+			{
 				parent_[q_root] = p_root;
-			sz_[p_root] += sz_[q_root];
+				sz_[p_root] += sz_[q_root];
+			}
 		}
 	};
 }
